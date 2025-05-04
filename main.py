@@ -36,7 +36,7 @@ async def query_chatbot(request: QuestionRequest):
         # Assuming request is a pydantic object like: {"question": "your text"}
         messages={"messages": [request.question]}
         
-        result = graph.invoke({"messages": messages})
+        result = graph.invoke(messages)
         
         # If result is dict with messages:
         if isinstance(result, dict) and "messages" in result:

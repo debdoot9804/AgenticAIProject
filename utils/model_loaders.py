@@ -36,7 +36,7 @@ class ModelLoader:
         Load and return the LLM model.
         """
         print("LLM loading...")
-        model_name=self.config["llm"]["model_name"]
+        model_name=self.config["llm"]["google"]["model_name"]
         gemini_model=ChatGoogleGenerativeAI(model=model_name)
         
         return gemini_model  # Placeholder for future LLM loading
