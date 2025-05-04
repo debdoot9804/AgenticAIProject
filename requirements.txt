@@ -1,0 +1,9 @@
+lancedb
+langchain
+langgraph
+langchain_core
+tavily_python
+polygon
+numpy
+pandas
+langchain_groq
