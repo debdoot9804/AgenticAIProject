@@ -6,10 +6,10 @@ packages=find_packages(),
 install_requires=['lancedb',
 'langchain',
 'langgraph',
-'langchain_core'
+'langchain_core',
 'tavily_python',
-'polygon'
-'numpy'
-'pandas'
+'polygon',
+'numpy',
+'pandas',
 'langchain_groq']
 )

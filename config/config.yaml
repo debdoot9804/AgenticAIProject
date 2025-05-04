@@ -1,0 +1,18 @@
+vector_db:
+  name:"test"
+
+embedding_model:
+  provider:"google"
+  model_name:"models/text-embedding-004"
+
+
+
+
+
+llm:
+  provider:"google"
+  model_name:"gemini-1.5-pro"
+
+
+retriever:
+  top_K:3

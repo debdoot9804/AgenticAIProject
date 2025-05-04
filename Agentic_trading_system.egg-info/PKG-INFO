@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: Agentic-trading-system
+Version: 1.0.0
+Requires-Dist: lancedb
+Requires-Dist: langchain
+Requires-Dist: langgraph
+Requires-Dist: langchain_core
+Requires-Dist: tavily_python
+Requires-Dist: polygon
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: langchain_groq

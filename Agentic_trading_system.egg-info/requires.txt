@@ -7,7 +7,3 @@ polygon
 numpy
 pandas
 langchain_groq
-langchain_community
-
-pydantic
--e.
