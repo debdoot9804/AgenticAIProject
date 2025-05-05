@@ -1,5 +1,5 @@
 vector_db:
-  name:"test"
+   index_name: "trading-bot"
 
 embedding_model:
   provider:"google"
@@ -10,9 +10,19 @@ embedding_model:
 
 
 llm:
-  provider:"google"
-  model_name:"gemini-1.5-pro"
+  google:
+    provider:"google"
+    model_name:"gemini-1.5-pro"
+
+  groq:
+    provider:"groq"
+    model_name:"gemma2-9b-it"
 
 
 retriever:
   top_K:3
+
+tools:
+  tavily:
+    max_results:5
+

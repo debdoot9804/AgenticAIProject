@@ -1,18 +1,31 @@
 from langchain.tools import tool
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from lancedb.rerankers import LinearCombinationReranker
-from langchain_community.vectorstores import LanceDB
+from pinecone import Pinecone
+from langchain_pinecone import PineconeVectorStore
 from langchain_community.tools import TavilySearchResults
 from langchain_community.tools.polygon.financials import PolygonFinancials
 from langchain_community.utilities.polygon import PolygonAPIWrapper
 from langchain_community.tools.bing_search import BingSearchResults
 from data_models.models import RagToolSchema
+from dotenv import load_dotenv
+import os
+from utils.config_loader import load_config
+from models.model_loader import ModelLoader
+
+
+load_dotenv()
+PINECONE_API_KEY=os.getenv("PINECONE_API_KEY")
+polygon_api_wrapper=PolygonAPIWrapper()
+model_loader=ModelLoader()
+config=load_config()
 
 
 @tool(args_schema=RagToolSchema)
 def retriever_tool(question):
     """retriever tool"""
-    return ""
+    pc=Pinecone(api_key=PINECONE_API_KEY)
+    vector_store=PineconeVectorStore(index=pc.Index(config["vector_db"]["index_name"]),embedding=model_loader.load_embedding())
+    
+    
 
 @tool
 def tavily_tool(question:str):

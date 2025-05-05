@@ -5,7 +5,7 @@ Agentic_trading_system.egg-info/dependency_links.txt
 Agentic_trading_system.egg-info/requires.txt
 Agentic_trading_system.egg-info/top_level.txt
 agent/__init__.py
-agent/agents.py
+agent/workflow.py
 data_models/__init__.py
 data_models/models.py
 exception/__init__.py
