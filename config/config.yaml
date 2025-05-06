@@ -21,6 +21,7 @@ llm:
 
 retriever:
   top_K:3
+  score_threshold: 0.6
 
 tools:
   tavily:

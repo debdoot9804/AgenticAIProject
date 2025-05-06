@@ -33,7 +33,6 @@ class ModelLoader:
         llm_model=self.config["llm"]["groq"]["model_name"]
         groq_model=ChatGroq(model=llm_model) 
         return groq_model
-
         
 
 

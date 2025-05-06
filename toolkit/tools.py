@@ -24,8 +24,10 @@ def retriever_tool(question):
     """retriever tool"""
     pc=Pinecone(api_key=PINECONE_API_KEY)
     vector_store=PineconeVectorStore(index=pc.Index(config["vector_db"]["index_name"]),embedding=model_loader.load_embedding())
-    
-    
+    retriever=vector_store.as_retriever(search_type="similarity_score_threshold",search_kwargs={"k":config["retriever"]["top_k"],"score_threshold":config["retriever"]["score_threshold"]}) 
+    result=retriever.invoke(question)
+
+    return result
 
 @tool
 def tavily_tool(question:str):
