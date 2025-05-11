@@ -11,7 +11,7 @@ from utils.config_loader import load_config
 from dotenv import load_dotenv
 from pinecone import Pinecone
 load_dotenv()
-api_wrapper = PolygonAPIWrapper()
+polygon_API = PolygonAPIWrapper()
 model_loader=ModelLoader()
 config = load_config()
 
@@ -37,4 +37,4 @@ tavilytool = TavilySearchResults(
     include_raw_content=True,
     )
 
-financials_tool = PolygonFinancials(api_wrapper=api_wrapper)
+financials_tool = PolygonFinancials(api_wrapper=polygon_API)

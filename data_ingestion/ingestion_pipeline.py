@@ -59,9 +59,7 @@ class DataIngestion:
                 if file_ext == ".pdf":
                     loader = PyPDFLoader(temp_path)
                     documents.extend(loader.load())
-                elif file_ext == ".docx":
-                    loader = Docx2txtLoader(temp_path)
-                    documents.extend(loader.load())
+                
                 else:
                     print(f"Unsupported file type: {uploaded_file.filename}")
             return documents
@@ -73,7 +71,7 @@ class DataIngestion:
             text_splitter = RecursiveCharacterTextSplitter(
                 chunk_size=1000,
                 chunk_overlap=200,
-                length_function=len
+                
             )
             documents = text_splitter.split_documents(documents)
 
